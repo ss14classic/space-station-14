@@ -109,7 +109,7 @@ If this returns no errors you probably did it right.
 Classic is not a full revert of the Respritening. The are some exceptions to be aware of:
 
 * **Turnstiles.** While technically part of Respritening, upstream's `EnergyGate` replaces the old turnstiles, because they are functionally different than turnstiles.
-* **Wall light positions.** Unrelated to the Respritening, a few days before Respritingen upstream inverted the wall light's `PointLight.offset` which caused a lot of lighting issues. Classic reverts only the light offset change so lights look accurate to how they are supposed to be. See https://github.com/space-wizards/space-station-14/pull/44843/changes#diff-a416a956ea91c5bdf0b904245c06aa27f8b0d51fcaca2b7babf65382ed1cc94c
+* **Wall light positions.** Unrelated to the Respritening, a few days before Respritening upstream inverted the wall light's `PointLight.offset` which caused a lot of lighting issues. Classic reverts only the light offset change so lights look accurate to how they are supposed to be. See https://github.com/space-wizards/space-station-14/pull/44843/changes#diff-a416a956ea91c5bdf0b904245c06aa27f8b0d51fcaca2b7babf65382ed1cc94c
 * **Bananium**. All bananium related content including the bananium science anomaly and bananium rock crabs have been fully restored. Worth mentioning because it is an actual gameplay change. All hail the bananium statue! HONK!
 * **Rotated Wallmounts**. Added the rotatable versions of classic wallmounts made by [Codebreak](https://github.com/Codubreku). This is a definitive improvement as it makes it more clear to the players which way an APC for example is facing. [View PR](https://github.com/ss14classic/space-station-14/pull/1)
 
