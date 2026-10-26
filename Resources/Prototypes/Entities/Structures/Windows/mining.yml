@@ -33,7 +33,10 @@
             min: 1
             max: 2
   - type: IconSmooth
-    base: mwindow
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ windows ]
+      base: mwindow
   - type: DamageVisuals
     damageDivisor: 4
   - type: StaticPrice
@@ -57,9 +60,11 @@
     - Diagonal
     - Window
   - type: IconSmooth
-    mode: Diagonal
     key: windows
-    base: state
+    states:
+    - !type:DiagonalSpriteSmoothing
+      mask: [ windows ]
+      base: state
   - type: Icon
     sprite: Structures/Windows/mining_diagonal.rsi
     state: state0

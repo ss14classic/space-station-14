@@ -14,4 +14,8 @@
   - type: IconSmooth
   # Classic: Restored smoothing group.
     key: windows
-    base: xenoborg
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Windows don't smooth with walls.
+      mask: [ windows, grilles, marble, doors ]
+      base: xenoborg

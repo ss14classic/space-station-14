@@ -74,9 +74,12 @@
     tags:
     - Diagonal
   - type: IconSmooth
-    mode: Diagonal
     key: walls
-    base: state
+    states:
+    - !type:DiagonalSpriteSmoothing
+    # Classic: Walls don't smooth with windows.
+      mask: [ walls, grilles, marble, doors ]
+      base: state
   - type: Airtight
     noAirWhenFullyAirBlocked: false
     airBlockedDirection:
@@ -133,7 +136,11 @@
             max: 1
   - type: IconSmooth
     key: walls
-    base: brick
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Walls don't smooth with windows.
+      mask: [ walls, grilles, marble, doors ]
+      base: brick
 
 # Classic: Removed.
 #- type: entity
@@ -199,9 +206,12 @@
         sound:
           collection: gib
   - type: IconSmooth
-  # Classic: Restored smoothing group.
     key: walls
-    base: meat
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Walls don't smooth with windows.
+      mask: [ walls, grilles, marble, doors ]
+      base: meat
 
 - type: entity
   parent: [ BaseWall, BaseStructureHealth ]
@@ -222,7 +232,43 @@
       - *SpawnGirder
   - type: IconSmooth
     key: walls
-    base: debug
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Walls don't smooth with windows.
+      mask: [ walls, grilles, marble, doors ]
+      base: debug
+
+- type: entity
+  parent: WallDebug
+  id: WallDebugA
+  name: debug wall
+  suffix: DEBUG, AltA
+  components:
+  - type: Sprite
+    sprite: Structures/Walls/debugalt.rsi
+  - type: Icon
+    sprite: Structures/Walls/debugalt.rsi
+  - type: IconSmooth
+    key: walls
+    states:
+    - !type:CardinalCornerSpriteSmoothing
+      mask: [ walls ]
+      altMask: [ windows, grilles, marble, doors ]
+      base: debug
+
+- type: entity
+  parent: WallDebugA
+  id: WallDebugB
+  name: debug wall
+  suffix: DEBUG, AltB
+  components:
+  - type: IconSmooth
+    key: marble
+    states:
+    - !type:CardinalCornerSpriteSmoothing
+      mask: [ marble ]
+      altMask: [ windows, grilles, walls, doors ]
+      base: debug
 
 - type: entity
   parent: [ BaseWall, StructureHealthWallWeak ]
@@ -269,7 +315,11 @@
         density: 4000
   - type: IconSmooth
     key: walls
-    base: gold
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Walls don't smooth with windows.
+      mask: [ walls, grilles, marble, doors ]
+      base: gold
 
 - type: entity
   parent: [ BaseWall, StructureHealthWallWeak ]
@@ -300,7 +350,11 @@
           SheetPlasma1: *BaseWallSpawn
   - type: IconSmooth
     key: walls
-    base: plasma
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Walls don't smooth with windows.
+      mask: [ walls, grilles, marble, doors ]
+      base: plasma
   - type: RadiationBlocker
     resistance: 5
 
@@ -316,7 +370,11 @@
     sprite: Structures/Walls/plastitanium.rsi
   - type: IconSmooth
     key: walls
-    base: plastitanium
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Walls don't smooth with windows.
+      mask: [ walls, grilles, marble, doors ]
+      base: plastitanium
   - type: Fixtures
     fixtures:
       fix1:
@@ -360,7 +418,6 @@
     drawdepth: Walls
   # Classic: Respritening renamed.
     sprite: Structures/Walls/plastitanium_diagonal.rsi
-    state: state0
   - type: Icon
   # Classic: Respritening renamed.
     sprite: Structures/Walls/plastitanium_diagonal.rsi
@@ -423,7 +480,11 @@
           SheetPlasteel1: *BaseWallSpawn
   - type: IconSmooth
     key: walls
-    base: reinf_over
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Walls don't smooth with windows.
+      mask: [ walls, grilles, marble, doors ]
+      base: reinf_over
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -470,8 +531,12 @@
     node: reinforcedWallRust
   - type: IconSmooth
     key: walls
-    base: reinf_over
-  # Rusted walls should be made weaker through a damage mod status effect.
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Walls don't smooth with windows.
+      mask: [ walls, grilles, marble, doors ]
+      base: reinf_over
+    # Rusted walls should be made weaker through a damage mod status effect.
 
 - type: entity
   parent: [ WallDiagonalBase, StructureHealthWallStrong ]
@@ -482,7 +547,6 @@
     drawdepth: Walls
   # Classic: Respritening renamed.
     sprite: Structures/Walls/reinforced_diagonal.rsi
-    state: state0
   - type: Icon
   # Classic: Respritening renamed.
     sprite: Structures/Walls/reinforced_diagonal.rsi
@@ -552,6 +616,27 @@
 #  - type: RadiationBlocker
 #    resistance: 5
 
+# Classic: Removed.
+#- type: entity
+#  parent: [ WallMarbleIndestructible, StructureHealthWallStrong ]
+#  id: WallMarble
+#  name: marble wall
+#  suffix: ""
+#  components:
+#  - type: Injurable
+#    damageContainer: StructuralInorganic
+#  - type: Damageable
+#    damageModifierSet: RockMod
+#  - type: Destructible
+#    thresholds:
+#    - trigger: *DamageWallStrong
+#      behaviors:
+#      - *SoundMetalSlam
+#      - *SpawnGirder
+#      - *SpawnPlasteel
+#  - type: StaticPrice
+#    price: 150
+
 - type: entity
   parent: [ BaseWall, StructureHealthWallWeak ]
   id: WallSilver
@@ -581,7 +666,11 @@
           IngotSilver1: *BaseWallSpawn
   - type: IconSmooth
     key: walls
-    base: silver
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Walls don't smooth with windows.
+      mask: [ walls, grilles, marble, doors ]
+      base: silver
 
 #shuttle walls
 - type: entity
@@ -593,7 +682,6 @@
     drawdepth: Walls
   # Classic: Respritening renamed.
     sprite: Structures/Walls/shuttle_diagonal.rsi
-    state: state0
   - type: Icon
   # Classic: Respritening renamed.
     sprite: Structures/Walls/shuttle_diagonal.rsi
@@ -665,7 +753,11 @@
     node: shuttleWall
   - type: IconSmooth
     key: walls
-    base: state
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Walls don't smooth with windows.
+      mask: [ walls, grilles, marble, doors ]
+      base: state
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -724,7 +816,11 @@
           SheetSteel1: *BaseWallSpawn
   - type: IconSmooth
     key: walls
-    base: solid
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Walls don't smooth with windows.
+      mask: [ walls, grilles, marble, doors ]
+      base: solid
 
 - type: entity
   parent: [ WallDiagonalBase, StructureHealthWall ]
@@ -735,7 +831,6 @@
     drawdepth: Walls
   # Classic: Respritening renamed.
     sprite: Structures/Walls/solid_diagonal.rsi
-    state: state0
   - type: Icon
   # Classic: Respritening renamed.
     sprite: Structures/Walls/solid_diagonal.rsi
@@ -765,7 +860,11 @@
     node: wallrust
   - type: IconSmooth
     key: walls
-    base: solid
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Walls don't smooth with windows.
+      mask: [ walls, grilles, marble, doors ]
+      base: solid
   # Rusted walls should be made weaker through a damage mod status effect.
 
 - type: entity
@@ -791,7 +890,11 @@
   - type: IconSmooth
   # Classic: Restored smoothing group.
     key: chitin
-    base: solid
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Only smooths with its own group.
+      mask: [ chitin ]
+      base: solid
   - type: Construction
     graph: Girder
     node: wallChitin
@@ -840,7 +943,11 @@
   - type: IconSmooth
   # Classic: Restored smoothing group.
     key: chitin
-    base: reinf_over
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Only smooths with its own group.
+      mask: [ chitin ]
+      base: reinf_over
   - type: Construction
     graph: Girder
     node: reinforcedWallChitin
@@ -858,7 +965,11 @@
     sprite: Structures/Walls/xenoborg.rsi
   - type: IconSmooth
     key: walls
-    base: xenoborg
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Walls don't smooth with windows.
+      mask: [ walls, grilles, marble, doors ]
+      base: xenoborg
 
 - type: entity
   parent: WallPlastitaniumDiagonal
@@ -912,7 +1023,11 @@
         density: 6000
   - type: IconSmooth
     key: walls
-    base: uranium
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Walls don't smooth with windows.
+      mask: [ walls, grilles, marble, doors ]
+      base: uranium
   - type: RadiationBlocker
     resistance: 6
 
@@ -948,7 +1063,11 @@
   - type: IconSmooth
   # Classic: Restored smoothing group.
     key: woods
-    base: wood
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Only smooths with its own group.
+      mask: [ woods ]
+      base: wood
 
 - type: entity
   parent: [ BaseWall, StructureHealthBarrier ]
@@ -981,7 +1100,11 @@
           MaterialWebSilk1: *BaseWallSpawn
   - type: IconSmooth
     key: webs
-    base: wall
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Web walls only smooth with each other.
+      mask: [ webs ]
+      base: wall
   - type: Construction
     graph: WebStructures
     node: wall
@@ -1005,7 +1128,11 @@
       - *SpawnGirder
   - type: IconSmooth
     key: walls
-    base: mining
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Walls don't smooth with windows.
+      mask: [ walls, grilles, marble, doors ]
+      base: mining
   - type: Appearance
 
 - type: entity
@@ -1017,7 +1144,6 @@
     drawdepth: Walls
   # Classic: Respritening renamed.
     sprite: Structures/Walls/mining_diagonal.rsi
-    state: state0
   - type: Icon
   # Classic: Respritening renamed.
     sprite: Structures/Walls/mining_diagonal.rsi
@@ -1162,15 +1288,15 @@
           path: /Audio/Effects/poster_broken.ogg
   - type: IconSmooth
     key: cards
-    base: card
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ cards ]
+      base: card
   - type: Occluder
   - type: BlockWeather
   - type: SunShadowCast
 
 # Classic: readded entities removed by Respritening.
-# Classic: health retuned to the modern StructureHealth tiers. Where the classic value
-# Classic: already matched a tier that tier is used, otherwise the tier of whatever wall
-# Classic: upstream migrated this one to.
 
 - type: entity
   parent: WallCobblebrick
@@ -1183,7 +1309,10 @@
     sprite: Structures/Walls/cobblebrick_andesite.rsi
   - type: IconSmooth
     key: cobblebricks
-    base: cobblebrick
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ cobblebricks ]
+      base: cobblebrick
 
 - type: entity
   parent: WallCobblebrick
@@ -1196,7 +1325,10 @@
     sprite: Structures/Walls/cobblebrick_asteroid.rsi
   - type: IconSmooth
     key: cobblebricks
-    base: cobblebrick
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ cobblebricks ]
+      base: cobblebrick
 
 - type: entity
   parent: WallCobblebrick
@@ -1209,7 +1341,10 @@
     sprite: Structures/Walls/cobblebrick_basalt.rsi
   - type: IconSmooth
     key: cobblebricks
-    base: cobblebrick
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ cobblebricks ]
+      base: cobblebrick
 
 - type: entity
   parent: WallCobblebrick
@@ -1222,7 +1357,10 @@
     sprite: Structures/Walls/cobblebrick_chromite.rsi
   - type: IconSmooth
     key: cobblebricks
-    base: cobblebrick
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ cobblebricks ]
+      base: cobblebrick
 
 - type: entity
   parent: [ BaseWall, StructureHealthWallWeak ]
@@ -1249,7 +1387,10 @@
             max: 1
   - type: IconSmooth
     key: walls
-    base: clock
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ walls ]
+      base: clock
 
 - type: entity
   parent: [ BaseWall, StructureHealthWallWeak ]
@@ -1276,7 +1417,10 @@
       - *SpawnGirder
   - type: IconSmooth
     key: walls
-    base: clown
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ walls ]
+      base: clown
   - type: Fixtures
     fixtures:
       fix1:
@@ -1307,7 +1451,10 @@
     damageModifierSet: RockMod
   - type: IconSmooth
     key: cobblebricks
-    base: cobblebrick
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ cobblebricks ]
+      base: cobblebrick
 
 - type: entity
   parent: [ BaseWall, StructureHealthWallWeak ]
@@ -1327,7 +1474,10 @@
       - *SpawnGirder
   - type: IconSmooth
     key: walls
-    base: cult
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ walls ]
+      base: cult
 
 - type: entity
   parent: [ BaseWall, StructureHealthWallStrong ]
@@ -1351,7 +1501,10 @@
       - *SpawnGirder
   - type: IconSmooth
     key: walls
-    base: diamond
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ walls ]
+      base: diamond
 
 - type: entity
   parent: [ BaseWall, StructureHealthWallWeak ]
@@ -1371,7 +1524,10 @@
       - *SpawnGirder
   - type: IconSmooth
     key: walls
-    base: ice
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ walls ]
+      base: ice
 
 - type: entity
   parent: WallCobblebrick
@@ -1385,7 +1541,10 @@
     sprite: Structures/Walls/cobblebrick_ironsand.rsi
   - type: IconSmooth
     key: cobblebricks
-    base: cobblebrick
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ cobblebricks ]
+      base: cobblebrick
   - type: RCDDeconstructable
     deconstructable: false
   - type: Destructible
@@ -1417,11 +1576,13 @@
   - type: Damageable
     damageModifierSet: RockMod
   - type: IconSmooth
-    key: walls
-    base: necropolis
-
 # Classic: Added so the Respritening's indestructible malign walls have somewhere to migrate.
 # Classic: Modified damage modifiers.
+    key: walls
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ walls ]
+      base: necropolis
 - type: entity
   parent: WallNecropolis
   id: WallNecropolisIndestructible
@@ -1463,7 +1624,10 @@
       - *SoundMetalSlam
   - type: IconSmooth
     key: walls
-    base: plastic
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ walls ]
+      base: plastic
 
 - type: entity
   parent: [ BaseWall, StructureHealthWallStrong ]
@@ -1484,7 +1648,10 @@
       - *SpawnGirder
   - type: IconSmooth
     key: walls
-    base: riveted
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ walls ]
+      base: riveted
   - type: StaticPrice
     price: 150
 
@@ -1499,7 +1666,10 @@
     sprite: Structures/Walls/cobblebrick_sand.rsi
   - type: IconSmooth
     key: cobblebricks
-    base: cobblebrick
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ cobblebricks ]
+      base: cobblebrick
 
 - type: entity
   parent: [ BaseWall, StructureHealthWallWeak ]
@@ -1524,7 +1694,10 @@
       - *SpawnGirder
   - type: IconSmooth
     key: walls
-    base: sandstone
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ walls ]
+      base: sandstone
 
 - type: entity
   parent: WallCobblebrick
@@ -1538,7 +1711,10 @@
     sprite: Structures/Walls/cobblebrick_snow.rsi
   - type: IconSmooth
     key: cobblebricks
-    base: cobblebrick
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ cobblebricks ]
+      base: cobblebrick
 
 - type: entity
   parent: [ BaseWall, StructureHealthWall ]

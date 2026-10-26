@@ -36,8 +36,14 @@
     sprite: Tiles/Planet/liquid_plasma.rsi
     state: full
   - type: IconSmooth
+  # Classic: Restored key.
     key: floor
-    base: plasma
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Restored mask.
+      mask: [ floor ]
+    # Classic: Restored base.
+      base: plasma
   - type: Physics
     bodyType: Static
   - type: Fixtures

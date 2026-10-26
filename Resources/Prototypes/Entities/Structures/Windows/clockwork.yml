@@ -31,7 +31,10 @@
             min: 1
             max: 2
   - type: IconSmooth
-    base: cwindow
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ windows ]
+      base: cwindow
   - type: Construction
     graph: Window
     node: clockworkWindow
@@ -56,9 +59,11 @@
     - Diagonal
     - Window
   - type: IconSmooth
-    mode: Diagonal
     key: windows
-    base: state
+    states:
+    - !type:DiagonalSpriteSmoothing
+      mask: [ windows ]
+      base: state
   - type: Icon
     sprite: Structures/Windows/clockwork_diagonal.rsi
     state: state0

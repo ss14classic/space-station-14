@@ -28,9 +28,11 @@
     state: full
   - type: IconSmooth
     key: chasm
-    additionalKeys:
-    - walls
-    base: chasm
+    states:
+    - !type:CornerSpriteSmoothing
+      mask: [ chasm, walls ]
+    # Classic: Restored base.
+      base: chasm
   - type: Physics
     bodyType: Static
   - type: Fixtures

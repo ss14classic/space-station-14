@@ -156,7 +156,6 @@
   # Classic: readded smoothing removed by Respritening.
   - type: IconSmooth
     key: chitin
-    mode: NoSprite
 
 - type: entity
   parent: BlastDoorXeno

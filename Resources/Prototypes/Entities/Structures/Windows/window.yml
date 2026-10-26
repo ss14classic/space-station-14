@@ -53,7 +53,11 @@
   - type: IconSmooth
   # Classic: Restored smoothing group.
     key: windows
-    base: window
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Windows don't smooth with walls.
+      mask: [ windows, grilles, marble, doors ]
+      base: window
   - type: PlacementReplacement
     key: walls
   - type: InteractionPopup
@@ -121,7 +125,11 @@
   # Classic: Respritening renamed.
     sprite: Structures/Windows/tinted_window.rsi
   - type: IconSmooth
-    base: twindow
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Windows don't smooth with walls.
+      mask: [ windows, grilles, marble, doors ]
+      base: twindow
   - type: Construction
     graph: Window
     node: tintedWindow
@@ -327,16 +335,18 @@
     drawdepth: WallTops
   # Classic: Respritening renamed.
     sprite: Structures/Windows/window_diagonal.rsi
-    state: state0
   - type: Tag
     tags:
     - Diagonal
     - Window
   - type: IconSmooth
-    mode: Diagonal
   # Classic: Restored smoothing group.
     key: windows
-    base: state
+    states:
+    - !type:DiagonalSpriteSmoothing
+    # Classic: Windows don't smooth with walls.
+      mask: [ windows, grilles, marble, doors ]
+      base: state
   - type: Icon
   # Classic: Respritening renamed.
     sprite: Structures/Windows/window_diagonal.rsi

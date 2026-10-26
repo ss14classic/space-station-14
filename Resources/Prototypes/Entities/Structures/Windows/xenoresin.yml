@@ -11,4 +11,8 @@
   # Classic: Respritening renamed.
     sprite: Structures/Windows/xeno_resin.rsi
   - type: IconSmooth
-    base: xwindow
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Windows don't smooth with walls.
+      mask: [ windows, grilles, marble, doors ]
+      base: xwindow

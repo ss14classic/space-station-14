@@ -34,7 +34,11 @@
             min: 1
             max: 2
   - type: IconSmooth
-    base: rwindow
+    states:
+    - !type:CornerSpriteSmoothing
+    # Classic: Windows don't smooth with walls.
+      mask: [ windows, grilles, marble, doors ]
+      base: rwindow
   - type: Construction
     graph: Window
     node: reinforcedWindow
@@ -134,16 +138,18 @@
     drawdepth: WallTops
   # Classic: Respritening renamed.
     sprite: Structures/Windows/reinforced_window_diagonal.rsi
-    state: state0
   - type: Tag
     tags:
     - Diagonal
     - Window
   - type: IconSmooth
-    mode: Diagonal
   # Classic: Restored smoothing group.
     key: windows
-    base: state
+    states:
+    - !type:DiagonalSpriteSmoothing
+    # Classic: Windows don't smooth with walls.
+      mask: [ windows, grilles, marble, doors ]
+      base: state
   - type: Icon
   # Classic: Respritening renamed.
     sprite: Structures/Windows/reinforced_window_diagonal.rsi
