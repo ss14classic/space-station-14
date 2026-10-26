@@ -56,6 +56,7 @@
     - BoxCardboard
     - BoxHug
 
+# Classic: Readded. Upstream replaced these with light packages (Catalog/Fills/EntityProviders/light_packages.yml).
 - type: entity
   name: lightbulb box
   parent: BoxCardboard
@@ -123,10 +124,20 @@
           amount: 6
 
 - type: entity
-  name: holiday lighttube box
-  parent: BoxLightbulb
+  parent: BoxCardboard
   id: BoxLighttubeHoliday
+  name: holiday lighttube box
   components:
+  - type: Sprite
+    layers:
+    - state: box
+    - state: light
+  - type: Storage
+    grid:
+    - 0,0,5,3
+    whitelist:
+      components:
+      - LightBulb
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:AllSelector

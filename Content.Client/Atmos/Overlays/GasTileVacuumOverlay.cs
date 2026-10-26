@@ -19,6 +19,11 @@ namespace Content.Client.Atmos.Overlays;
 /// </summary>
 public sealed partial class GasTileVacuumOverlay : Overlay
 {
+    /// <summary>
+    /// Draw before other overlays so the vacuum shader does not desaturate them.
+    /// </summary>
+    public const int ContentZIndex = -1;
+
     public override bool RequestScreenTexture { get; set; } = true;
     private static readonly ProtoId<ShaderPrototype> UnshadedShader = "unshaded";
     private static readonly ProtoId<ShaderPrototype> VacuumOverlayShader = "VacuumDesaturation";
@@ -46,6 +51,7 @@ public sealed partial class GasTileVacuumOverlay : Overlay
     public GasTileVacuumOverlay()
     {
         IoCManager.InjectDependencies(this);
+        ZIndex = ContentZIndex;
         _maps = _entManager.System<SharedMapSystem>();
         _xformSys = _entManager.System<SharedTransformSystem>();
 
@@ -105,9 +111,6 @@ public sealed partial class GasTileVacuumOverlay : Overlay
 
                     var (_, _, gridEntToWorld, worldToGridLocal) = _xformSys.GetWorldPositionRotationMatrixWithInv(grid.Owner);
                     var gridEntToViewportLocal = gridEntToWorld * worldToViewportLocal;
-
-                    if (!Matrix3x2.Invert(gridEntToViewportLocal, out _))
-                        continue;
 
                     // Draw commands (like DrawRect) will be using grid coordinates from here
                     worldHandle.SetTransform(gridEntToViewportLocal);

@@ -58,6 +58,7 @@
     - Botanical
     - Chemicals
 
+# Classic: Readded. Upstream replaced these with light packages (Catalog/Fills/EntityProviders/light_packages.yml).
 - type: entity
   parent: BoxLightbulb
   id: BoxLightbulbColorfulMixed
