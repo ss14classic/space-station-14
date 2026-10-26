@@ -309,6 +309,13 @@
   - type: Sprite
   # Classic: Respritening renamed.
     sprite: Structures/Walls/rock.rsi
+  # Classic: use StaticSpriteSmoothing.
+  - type: IconSmooth
+    key: walls
+    states:
+    - !type:StaticSpriteSmoothing
+      base: rock_asteroid
+      index: 0
 
 - type: entity
   parent: [ BaseAsteroidRockVisuals, BaseAsteroidRock, BaseAsteroidDestructible ]
@@ -428,6 +435,13 @@
   - type: Sprite
   # Classic: Respritening renamed.
     sprite: Structures/Walls/rock.rsi
+  # Classic: use StaticSpriteSmoothing.
+  - type: IconSmooth
+    key: walls
+    states:
+    - !type:StaticSpriteSmoothing
+      base: ironrock
+      index: 0
 
 - type: entity
   parent: [ BaseIronRockVisuals, BaseAsteroidRock, BaseAsteroidDestructible ]
@@ -516,6 +530,11 @@
 #      mask: [ stone, doors ]
 #      base: stone
 #      index: 0
+  # Classic: use StaticSpriteSmoothing.
+    states:
+    - !type:StaticSpriteSmoothing
+      base: rock
+      index: 0
   - type: Icon
   # Classic: Respritening renamed.
     sprite: Structures/Walls/rock.rsi
@@ -653,6 +672,13 @@
   - type: Sprite
   # Classic: Respritening renamed.
     sprite: Structures/Walls/rock.rsi
+  # Classic: use StaticSpriteSmoothing.
+  - type: IconSmooth
+    key: walls
+    states:
+    - !type:StaticSpriteSmoothing
+      base: rock_snow
+      index: 0
 
 - type: entity
   parent: [ BaseVeinCoal, WallRockSnow ]
@@ -710,6 +736,13 @@
   - type: Sprite
   # Classic: Respritening renamed.
     sprite: Structures/Walls/rock.rsi
+  # Classic: use StaticSpriteSmoothing.
+  - type: IconSmooth
+    key: walls
+    states:
+    - !type:StaticSpriteSmoothing
+      base: rock_sand
+      index: 0
 
 - type: entity
   parent: [ BaseVeinCoal, WallRockSand ]
@@ -767,6 +800,13 @@
   - type: Sprite
   # Classic: Respritening renamed.
     sprite: Structures/Walls/rock.rsi
+  # Classic: use StaticSpriteSmoothing.
+  - type: IconSmooth
+    key: walls
+    states:
+    - !type:StaticSpriteSmoothing
+      base: rock_chromite
+      index: 0
 
 - type: entity
   parent: [ BaseVeinCoal, WallRockChromite ]
@@ -874,6 +914,13 @@
   components:
   - type: Icon
     state: ironsandstone
+  # Classic: use StaticSpriteSmoothing.
+  - type: IconSmooth
+    key: walls
+    states:
+    - !type:StaticSpriteSmoothing
+      base: ironsandstone
+      index: 0
   - type: Sprite
     sprite: Structures/Walls/rock.rsi
     layers:
@@ -907,6 +954,13 @@
   - type: Icon
     sprite: Structures/Walls/rock.rsi
     state: rock_andesite
+  # Classic: use StaticSpriteSmoothing.
+  - type: IconSmooth
+    key: walls
+    states:
+    - !type:StaticSpriteSmoothing
+      base: rock_andesite
+      index: 0
   - type: Sprite
     sprite: Structures/Walls/rock.rsi
     layers:
@@ -1211,6 +1265,13 @@
   - type: Icon
     sprite: Structures/Walls/rock.rsi
     state: rock_wall
+  # Classic: use StaticSpriteSmoothing.
+  - type: IconSmooth
+    key: walls
+    states:
+    - !type:StaticSpriteSmoothing
+      base: rock_wall
+      index: 0
   - type: Sprite
     sprite: Structures/Walls/rock.rsi
     layers:
