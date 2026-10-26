@@ -1563,3 +1563,28 @@
     collection: FootstepTile
   friction: 0.8
   itemDrop: FloorTileItemUraniumMarble
+
+# Classic: Added to replace Respritening's way of doing this.
+- type: tile
+  id: FloorExoVertical
+  parent: FloorDarkSquiggly
+  sprite: /Textures/Tiles/dark_squiggly_vertical.png
+  editorHidden: true
+
+- type: tile
+  id: FloorExoCornerNE
+  parent: FloorXenoSteelCorner
+  sprite: /Textures/Tiles/xeno_steel_corner_ne.png
+  editorHidden: true
+
+- type: tile
+  id: FloorExoCornerNW
+  parent: FloorXenoSteelCorner
+  sprite: /Textures/Tiles/xeno_steel_corner_nw.png
+  editorHidden: true
+
+- type: tile
+  id: FloorExoCornerSE
+  parent: FloorXenoSteelCorner
+  sprite: /Textures/Tiles/xeno_steel_corner_se.png
+  editorHidden: true

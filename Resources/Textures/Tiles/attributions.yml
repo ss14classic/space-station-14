@@ -146,9 +146,21 @@
   copyright: "Created by SlamBamActionman (github) for space-station-14."
   source: "https://github.com/space-wizards/space-station-14/"
 
+# Classic: Rotated copy of dark_squiggly.png.
+- files: ["dark_squiggly_vertical.png"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Created by SlamBamActionman (github) for space-station-14, rotated for Classic."
+  source: "https://github.com/space-wizards/space-station-14/"
+
 - files: [ "xeno_steel.png", "xeno_steel_corner.png" ]
   license: "CC-BY-SA-3.0"
   copyright: "Created by Kezu for space-station-14, edited by SlamBamActionman (github)."
+  source: "https://github.com/space-wizards/space-station-14/"
+
+# Classic: Rotated copies of xeno_steel_corner.png.
+- files: [ "xeno_steel_corner_ne.png", "xeno_steel_corner_nw.png", "xeno_steel_corner_se.png" ]
+  license: "CC-BY-SA-3.0"
+  copyright: "Created by Kezu for space-station-14, edited by SlamBamActionman (github), rotated for Classic."
   source: "https://github.com/space-wizards/space-station-14/"
 
 - files: [ "xeno_maint.png" ]
