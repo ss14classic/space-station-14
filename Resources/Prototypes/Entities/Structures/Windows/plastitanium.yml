@@ -52,6 +52,7 @@
     - Door
     - Firelock
   - type: IconSmooth
+  # Classic: Restored smoothing group.
     key: windows
     states:
     - !type:CornerSpriteSmoothing

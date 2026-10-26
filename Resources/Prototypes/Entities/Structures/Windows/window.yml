@@ -125,6 +125,8 @@
   # Classic: Respritening renamed.
     sprite: Structures/Windows/tinted_window.rsi
   - type: IconSmooth
+  # Classic: Removed.
+#    key: windows-tinted
     states:
     - !type:CornerSpriteSmoothing
     # Classic: Windows don't smooth with walls.

@@ -59,6 +59,7 @@
   description: A large structural assembly made out of metal and plasteel; It requires a layer of plasteel before it can be considered a reinforced wall.
   components:
   - type: Sprite
+  # Classic: Respritening renamed.
     sprite: Structures/Walls/solid.rsi
     state: reinforced_wall_girder
   - type: Construction

@@ -136,6 +136,7 @@
             min: 1
             max: 1
   - type: IconSmooth
+  # Classic: Restored smoothing group.
     key: walls
     states:
     - !type:CornerSpriteSmoothing
@@ -207,6 +208,7 @@
         sound:
           collection: gib
   - type: IconSmooth
+  # Classic: Restored smoothing group.
     key: walls
     states:
     - !type:CornerSpriteSmoothing
@@ -254,7 +256,10 @@
     states:
     - !type:CardinalCornerSpriteSmoothing
       mask: [ walls ]
-      altMask: [ windows, grilles, marble, doors ]
+      altMask: [
+        windows,
+        walls-marble,
+      ]
       base: debug
 
 - type: entity
@@ -264,11 +269,14 @@
   suffix: DEBUG, AltB
   components:
   - type: IconSmooth
-    key: marble
+    key: walls-marble
     states:
     - !type:CardinalCornerSpriteSmoothing
-      mask: [ marble ]
-      altMask: [ windows, grilles, walls, doors ]
+      mask: [ walls-marble ]
+      altMask: [
+        windows,
+        walls,
+      ]
       base: debug
 
 - type: entity
@@ -315,6 +323,7 @@
         - WallLayer
         density: 4000
   - type: IconSmooth
+  # Classic: Restored smoothing group.
     key: walls
     states:
     - !type:CornerSpriteSmoothing
@@ -350,6 +359,7 @@
         spawn:
           SheetPlasma1: *BaseWallSpawn
   - type: IconSmooth
+  # Classic: Restored smoothing group.
     key: walls
     states:
     - !type:CornerSpriteSmoothing
@@ -370,6 +380,7 @@
   - type: Icon
     sprite: Structures/Walls/plastitanium.rsi
   - type: IconSmooth
+  # Classic: Restored smoothing group.
     key: walls
     states:
     - !type:CornerSpriteSmoothing
@@ -460,8 +471,10 @@
   name: reinforced wall
   components:
   - type: Sprite
+  # Classic: Respritening renamed.
     sprite: Structures/Walls/solid.rsi
   - type: Icon
+  # Classic: Respritening renamed.
     sprite: Structures/Walls/solid.rsi
     state: rgeneric
   - type: Construction
@@ -666,6 +679,7 @@
         spawn:
           IngotSilver1: *BaseWallSpawn
   - type: IconSmooth
+  # Classic: Restored smoothing group.
     key: walls
     states:
     - !type:CornerSpriteSmoothing
@@ -753,6 +767,7 @@
     graph: Girder
     node: shuttleWall
   - type: IconSmooth
+  # Classic: Restored smoothing group.
     key: walls
     states:
     - !type:CornerSpriteSmoothing
@@ -965,6 +980,7 @@
   # Classic: Respritening renamed.
     sprite: Structures/Walls/xenoborg.rsi
   - type: IconSmooth
+  # Classic: Restored smoothing group.
     key: walls
     states:
     - !type:CornerSpriteSmoothing
@@ -987,6 +1003,17 @@
   # Classic: Respritening renamed.
     sprite: Structures/Walls/xenoborg_diagonal.rsi
     state: state0
+  # Classic: Removed.
+#  - type: IconSmooth
+#    key: walls-exo-borg
+#    states:
+#    - !type:DiagonalSpriteSmoothing
+#      mask:
+#      - walls-exo-borg
+#      - windows-exo-borg
+#      - grilles
+#      - doors
+#      base: state
 
 - type: entity
   parent: [ BaseWall, StructureHealthWallWeak ]
@@ -1023,6 +1050,7 @@
         - WallLayer
         density: 6000
   - type: IconSmooth
+  # Classic: Restored smoothing group.
     key: walls
     states:
     - !type:CornerSpriteSmoothing
@@ -1100,6 +1128,7 @@
         spawn:
           MaterialWebSilk1: *BaseWallSpawn
   - type: IconSmooth
+  # Classic: Restored smoothing group.
     key: webs
     states:
     - !type:CornerSpriteSmoothing
@@ -1291,7 +1320,10 @@
     key: cards
     states:
     - !type:CornerSpriteSmoothing
-      mask: [ cards ]
+      mask:
+      - cards
+      - grilles
+      - doors
       base: card
   - type: Occluder
   - type: BlockWeather

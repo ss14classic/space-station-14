@@ -27,6 +27,8 @@
             min: 1
             max: 2
   - type: IconSmooth
+  # Classic: Removed.
+#    key: windows-uranium
     states:
     - !type:CornerSpriteSmoothing
     # Classic: Windows don't smooth with walls.
