@@ -7,6 +7,8 @@
   isSubfloor: true
   footstepSounds:
     collection: FootstepPlating
+  materialComposition:
+    Steel: 75 # 0.75 sheets; 0.5 for the lattice, 0.25 for the tile
   baseTurf: Lattice
   baseWhitelist:
     - TrainLattice
@@ -99,6 +101,8 @@
   itemDrop: PartRodMetal1
   heatCapacity: 10000
   mass: 200
+  materialComposition:
+    Steel: 50 # 0.5 sheets = 1 rod
 
 - type: tile
   id: TrainLattice

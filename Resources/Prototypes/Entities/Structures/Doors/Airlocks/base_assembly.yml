@@ -28,7 +28,7 @@
   - type: Pullable
   - type: Transform
     anchored: true
-    noRot: true
+  - type: Rotatable
   - type: Damageable
     damageModifierSet: SteelStaticMod
   - type: RCDDeconstructable

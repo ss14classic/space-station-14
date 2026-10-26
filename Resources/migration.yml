@@ -1135,6 +1135,9 @@ DrinkNeurotoxinGlass: null
 #2026-08-19
 #JanitorServiceLight: null # Classic: Removed.
 
+#2026-08-31
+DrinkWaterJug: JugWater
+
 #2026-09-03
 # Classic: Revert stuff the Respritening added.
 FloorTileItemExoViscera: FloorTileItemXeno
@@ -1163,3 +1166,10 @@ RegalWindow: Window
 MeteorRockBananium: AsteroidRockBananium
 ButtonFrameWhite: ButtonFrameExit
 StatueOrnateClown: StatueBananiumClown
+
+#2026-09-05
+AsimovCircuitBoard: CrewsimovCircuitBoard
+
+# 2026-09-24
+ClothingShoesTourist: ClothingShoesSandalsBlack
+ClothingShoesWizard: ClothingShoesSandalsBrown

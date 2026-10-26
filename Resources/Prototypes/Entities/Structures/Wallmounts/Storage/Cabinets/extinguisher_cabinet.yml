@@ -4,6 +4,11 @@
   name: extinguisher cabinet
   description: A small wall mounted cabinet designed to hold a fire extinguisher.
   components:
+  - type: Construction
+    graph: ExtinguisherCabinetGraph
+    node: done
+    containers:
+    - ItemCabinet
   - type: Sprite
   # Classic: Respritening renamed.
     sprite: Structures/Wallmounts/extinguisher_cabinet.rsi

@@ -172,6 +172,11 @@
 
 - type: latheRecipe
   parent: BaseSteelTileRecipe
+  id: FloorTileItemSteelMono
+  result: FloorTileItemSteelMono
+
+- type: latheRecipe
+  parent: BaseSteelTileRecipe
   id: FloorTileItemSteelPavement
   result: FloorTileItemSteelPavement
 
@@ -502,21 +507,20 @@
   id: FloorTileItemGym
   result: FloorTileItemGym
 
-# Classic: Removed.
-#- type: latheRecipe
-#  parent: BasePlasticTileRecipe
-#  id: FloorTileItemPlastic
-#  result: FloorTileItemPlastic
+- type: latheRecipe
+  parent: BasePlasticTileRecipe
+  id: FloorTileItemPlastic
+  result: FloorTileItemPlastic
 
-#- type: latheRecipe
-#  parent: BasePlasticTileRecipe
-#  id: FloorTileItemDarkPlastic
-#  result: FloorTileItemDarkPlastic
+- type: latheRecipe
+  parent: BasePlasticTileRecipe
+  id: FloorTileItemDarkPlastic
+  result: FloorTileItemDarkPlastic
 
-#- type: latheRecipe
-#  parent: BasePlasticTileRecipe
-#  id: FloorTileItemWhitePlastic
-#  result: FloorTileItemWhitePlastic
+- type: latheRecipe
+  parent: BasePlasticTileRecipe
+  id: FloorTileItemWhitePlastic
+  result: FloorTileItemWhitePlastic
 
 # Classic: restored lathe recipes below.
 
@@ -535,10 +539,11 @@
   id: FloorTileItemSteelDiagonal
   result: FloorTileItemSteelDiagonal
 
-- type: latheRecipe
-  parent: BaseSteelTileRecipe
-  id: FloorTileItemSteelMono
-  result: FloorTileItemSteelMono
+# Classic: Removed. Upstream defines this recipe again above.
+#- type: latheRecipe
+#  parent: BaseSteelTileRecipe
+#  id: FloorTileItemSteelMono
+#  result: FloorTileItemSteelMono
 
 - type: latheRecipe
   parent: BaseSteelTileRecipe
