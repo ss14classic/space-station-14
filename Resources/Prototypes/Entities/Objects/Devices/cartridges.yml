@@ -137,7 +137,8 @@
       state: icon_magnifier
   - type: WantedListCartridge
   - type: StealTarget
-    stealGroup: WantedListCartridge
+    stealGroup:
+    - WantedListCartridge
 
 - type: entity
   parent: BasePDACartridge

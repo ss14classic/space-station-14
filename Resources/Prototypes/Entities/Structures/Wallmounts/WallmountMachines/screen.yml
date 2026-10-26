@@ -8,11 +8,16 @@
   - type: WallMount
     arc: 360
   - type: Rotatable
+  - type: TextScreenTimerVisuals
+    timerRow: 1
+    showCentiseconds: false # Distracting when too common.
   - type: TextScreenVisuals
     textOffset: 0,3
-    timerOffset: 0,-4
-    rows: 2
+    rowData: [{},{}]
     rowLength: 6
+    horizontalScrollOffset: 1
+    leftInvisiblePixels: 2
+    rightInvisiblePixels: 1
     scrollEnabled: true
     frameState:
       sprite: Structures/Wallmounts/screen.rsi

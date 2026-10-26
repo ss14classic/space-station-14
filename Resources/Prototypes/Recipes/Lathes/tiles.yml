@@ -539,12 +539,6 @@
   id: FloorTileItemSteelDiagonal
   result: FloorTileItemSteelDiagonal
 
-# Classic: Removed. Upstream defines this recipe again above.
-#- type: latheRecipe
-#  parent: BaseSteelTileRecipe
-#  id: FloorTileItemSteelMono
-#  result: FloorTileItemSteelMono
-
 - type: latheRecipe
   parent: BaseSteelTileRecipe
   id: FloorTileItemSteelSlatsContinuous

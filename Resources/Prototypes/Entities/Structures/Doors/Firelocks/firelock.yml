@@ -75,16 +75,6 @@
       # Classic: removed.
       #sprite: Structures/Doors/Airlocks/Effects/airlock-effects-firelock.rsi
       map: ["enum.FirelockVisualLayersTemperature.Base"]
-  - type: GenericVisualizer
-    visuals:
-      enum.FirelockVisuals.PressureWarning:
-        enum.FirelockVisualLayersPressure.Base:
-          True: { visible: true }
-          False: { visible: false }
-      enum.FirelockVisuals.TemperatureWarning:
-        enum.FirelockVisualLayersTemperature.Base:
-          True: { visible: true }
-          False: { visible: false }
   - type: AnimationPlayer
   - type: Fixtures
     fixtures:
@@ -215,6 +205,7 @@
   id: FirelockEdge
   parent: Firelock
   name: firelock
+  suffix: Edge
   components:
     - type: Sprite
     # Classic: Respritening renamed.
@@ -270,6 +261,12 @@
       enabled: false
     - type: Door
       occludes: false
+    # Classic: Removed. The classic edge sprite has these unlit states.
+#    - type: Firelock # Remove absent unlit states
+#      openingLightSpriteState: null
+#      closingLightSpriteState: null
+#      warningLightSpriteState: null
+#      denySpriteState: null
     - type: Physics
       canCollide: false
     - type: Construction
