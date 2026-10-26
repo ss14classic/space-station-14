@@ -51,9 +51,10 @@ public sealed partial class CCVars
 
     /// <summary>
     ///     Toggles vacuum overlay serverside. If you do not want it as an option for your players use this.
+    ///     Classic: Disabled by default.
     /// </summary>
     public static readonly CVarDef<bool> VacuumOverlay =
-        CVarDef.Create("accessibility.vacuum_overlay", true, CVar.ARCHIVE | CVar.REPLICATED | CVar.SERVER);
+        CVarDef.Create("accessibility.vacuum_overlay", false, CVar.ARCHIVE | CVar.REPLICATED | CVar.SERVER);
 
     /// <summary>
     ///     Decreases motion on the heat distortion shader.
