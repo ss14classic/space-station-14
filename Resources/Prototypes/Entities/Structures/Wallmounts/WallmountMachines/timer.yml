@@ -122,6 +122,9 @@
     drawdepth: WallMountedItems
     sprite: Structures/Wallmounts/signalscreen.rsi
     state: signalscreen
+  # Classic: Bugfix not being able to click on them.
+  - type: Clickable
+  - type: InteractionOutline
   - type: Construction
     graph: Timer
     node: frame
