@@ -4,7 +4,7 @@
 <img alt="Space Station 14 Classic" src="https://files.catbox.moe/wlsfcn.png">  
 </div>
 
-This is the repository for Space Station 14 Classic. A fork of the **stable** branch of upstream [Space Station 14](https://github.com/space-wizards/space-station-14) that retains the classic textures we all know and love in favour of the so called "Respritening".
+This is the repository for Space Station 14 Classic. A fork of the **stable** (2026-10-26) branch of upstream [Space Station 14](https://github.com/space-wizards/space-station-14) that retains the classic textures we all know and love in favour of the so called "Respritening".
 
 This point of this repository is to give downstream maintainers an alternative to rebase onto if they do not want to update their existing codebase and maps to use the new sprites, but still want to use the latest Wizden features.
 
@@ -112,6 +112,10 @@ Classic is not a full revert of the Respritening. The are some exceptions to be 
 * **Wall light positions.** Unrelated to the Respritening, a few days before Respritening upstream inverted the wall light's `PointLight.offset` which caused a lot of lighting issues. Classic reverts only the light offset change so lights look accurate to how they are supposed to be. See https://github.com/space-wizards/space-station-14/pull/44843/changes#diff-a416a956ea91c5bdf0b904245c06aa27f8b0d51fcaca2b7babf65382ed1cc94c
 * **Bananium**. All bananium related content including the bananium science anomaly and bananium rock crabs have been fully restored. Worth mentioning because it is an actual gameplay change. All hail the bananium statue! HONK!
 * **Rotated Wallmounts**. Added the rotatable versions of classic wallmounts made by [Codebreak](https://github.com/Codubreku). This is a definitive improvement as it makes it more clear to the players which way an APC for example is facing. [View PR](https://github.com/ss14classic/space-station-14/pull/1)
+* **Light boxes**. Technically not a Respritening change, but the think the old boxes were superior from usability and consistency so they are restored.
+* **Disabled vacuum desaturation**. Can still be turned on with CVAR. Disabled it by default because desaturating a room when it is spaced makes no sense and makes it just look dull.
+* **Bugfixed time construction**: Timer construction is bugged on upstream, fixed it as well as restored the old sprite obviously.
+* **Dark marble removed**: This is technically a classic unused floor tile sprite. No map uses it. Removed it because Wizden decided to decorate their new Centcomm with it and it looks really bad so it is migrated to Dark Steel Tile.
 
 ## License
 
