@@ -414,10 +414,11 @@
   id: FloorTileItemWhiteMarble
   result: FloorTileItemWhiteMarble
 
-- type: latheRecipe
-  parent: BaseMarbleTileRecipe
-  id: FloorTileItemDarkMarble
-  result: FloorTileItemDarkMarble
+# Classic: Removed.
+#- type: latheRecipe
+#  parent: BaseMarbleTileRecipe
+#  id: FloorTileItemDarkMarble
+#  result: FloorTileItemDarkMarble
 
 # Shuttle
 - type: latheRecipe

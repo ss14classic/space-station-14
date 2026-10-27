@@ -1531,16 +1531,17 @@
   friction: 0.8
   itemDrop: FloorTileItemWhiteMarble
 
-- type: tile
-  id: FloorDarkMarble
-  parent: BaseStationTile
-  name: tiles-dark-marble
-  sprite: /Textures/Tiles/dark_marble.png
-  variants: 8
-  footstepSounds:
-    collection: FootstepTile
-  friction: 0.8
-  itemDrop: FloorTileItemDarkMarble
+# Classic: Removed.
+#- type: tile
+#  id: FloorDarkMarble
+#  parent: BaseStationTile
+#  name: tiles-dark-marble
+#  sprite: /Textures/Tiles/dark_marble.png
+#  variants: 8
+#  footstepSounds:
+#    collection: FootstepTile
+#  friction: 0.8
+#  itemDrop: FloorTileItemDarkMarble
 
 - type: tile
   id: FloorPlasmaMarble

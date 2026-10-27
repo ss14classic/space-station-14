@@ -116,7 +116,8 @@
 
 - type: tileAlias
   id: FloorDarkMarbleMono
-  target: FloorDarkMarble
+  # Classic: I changed it FloorDark, set to FloorMarble if you want 100% accuracy.
+  target: FloorDark
 
 - type: tileAlias
   id: FloorWhiteMarbleMono
@@ -131,3 +132,10 @@
 - type: tileAlias
   id: FloorTechMaint2
   target: FloorTechMaint
+
+# Classic: Special case!!!!
+# Yes, this is technically a classic tile but the only map in the base game that uses it is the
+# new "improved" Centcomm, so I disabled it so Centcomm doesn't look like ass.
+- type: tileAlias
+  id: FloorDarkMarble
+  target: FloorDark

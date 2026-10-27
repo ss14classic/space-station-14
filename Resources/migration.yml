@@ -1154,7 +1154,11 @@ FloorTileItemExoCornerSE: FloorTileItemXenoSteelCorner
 FloorTileItemExoCornerSW: FloorTileItemXenoSteelCorner
 FloorTileItemExoHorizontal: FloorTileItemDarkSquiggly
 FloorTileItemExoVertical: FloorTileItemDarkSquiggly
-FloorTileItemDarkMarbleMono: FloorTileItemDarkMarble
+# Classic: Enable if you want the old dark marble back.
+#FloorTileItemDarkMarbleMono: FloorTileItemDarkMarble
+# Classic: Dark marble is removed.
+FloorTileItemDarkMarbleMono: FloorTileItemDark
+FloorTileItemDarkMarble: FloorTileItemDark
 FloorTileItemWhiteMarbleMono: FloorTileItemWhiteMarble
 FloorSwimmingPoolEntity: FloorWaterEntity
 

@@ -25,11 +25,12 @@
 #  name: stack-white-marble-mono-floor
 #  spawn: FloorTileItemWhiteMarbleMono
 
-- type: stack
-  parent: BaseTileStack
-  id: FloorTileDarkMarble
-  name: stack-dark-marble-floor
-  spawn: FloorTileItemDarkMarble
+# Classic: Removed.
+#- type: stack
+#  parent: BaseTileStack
+#  id: FloorTileDarkMarble
+#  name: stack-dark-marble-floor
+#  spawn: FloorTileItemDarkMarble
 
 # Classic: Removed.
 #- type: stack
